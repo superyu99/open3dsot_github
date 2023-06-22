@@ -1,0 +1,57 @@
+#data
+dataset: nuscenes_mf
+path:  /workspace/sot/Open3DSOT/data/nuscenes
+# path: /data/aronlin/Open3DSOT/data/nuscenes
+# version: v1.0-trainval
+version: v1.0-mini
+category_name: Car
+bb_scale: 1.25
+bb_offset: 2
+point_sample_size: 1024
+degrees: False
+coordinate_mode: velodyne
+up_axis: [0,0,1]
+preload_offset: 10
+data_limit_box: True
+key_frame_only: True
+train_split: train_track
+val_split: val
+test_split: val
+train_type: train_motion_mf
+num_candidates: 4
+motion_threshold: 0.15
+use_augmentation: False
+hist_num: 3 #历史帧数量
+empty_box_limit: 3 #历史帧空box的上限，目前认为：只要有历史帧有点，就参与训练
+limit_num_points_in_prev_box: 1 #小于这个数量，认为是空box
+
+
+#model configuration
+net_model: m2trackmf
+box_aware: True
+
+#loss configuration
+center_weight: 2
+angle_weight: 10.0
+seg_weight: 0.1
+bc_weight: 1
+
+motion_cls_seg_weight: 0.1
+
+
+# testing config
+use_z: True
+limit_box: False
+IoU_space: 3
+
+#training
+batch_size: 100
+workers: 10
+epoch: 180
+from_epoch: 0
+lr: 0.001
+optimizer: Adam
+lr_decay_step: 20
+lr_decay_rate: 0.1
+wd: 0
+gradient_clip_val: 0.0

@@ -1,0 +1,281 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: 当前文件",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "main_kitti",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--cfg",
+                "cfgs/M2_track_kitti.yaml",
+                "--batch_size",
+                "2",
+                "--epoch",
+                "1"
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "main_nuscenes",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--cfg",
+                "cfgs/M2_Track_nuscene.yaml",
+                "--batch_size",
+                "2",
+                "--epoch",
+                "1"
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "main_nuscenes_mf",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--cfg",
+                "cfgs/M2_Track_nuscene_mf.yaml",
+                "--batch_size",
+                "16",
+                "--epoch",
+                "1"
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "test_nuscenes_mf",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--cfg",
+                "cfgs/M2_Track_nuscene_mf.yaml",
+                "--checkpoint",
+                "/workspace/sot/Open3DSOT/lightning_logs/version_51/checkpoints/epoch=0-step=407.ckpt",
+                "--test",
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "main_nuscenes_mfattn",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--cfg",
+                "cfgs/M2_Track_nuscene_mf_attn.yaml",
+                "--batch_size",
+                "2",
+                "--epoch",
+                "1"
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "main_nuscenes_lidar_radar",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--cfg",
+                "cfgs/M2_Track_nuscene_lidar_radar.yaml",
+                "--batch_size",
+                "2",
+                "--epoch",
+                "1"
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "main_delft_lidar",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--cfg",
+                "cfgs/M2_track_delft_lidar.yaml",
+                "--batch_size",
+                "16",
+                "--epoch",
+                "20"
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "main_delft_radar",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--cfg",
+                "cfgs/M2_track_delft_radar.yaml",
+                "--batch_size",
+                "2",
+                "--epoch",
+                "20",
+                // "--test",
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "main_delft_image",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--cfg",
+                "cfgs/M2_track_delft_image.yaml",
+                "--batch_size",
+                "2",
+                "--epoch",
+                "20",
+                // "--test",
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "main_delft_radar_lidar",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--cfg",
+                "cfgs/M2_track_delft_radar_lidar.yaml",
+                "--batch_size",
+                "2",
+                "--epoch",
+                "20",
+                // "--test",
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "main_delft_radar_vdxdy", //copy from main_delft_radar
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--cfg",
+                "cfgs/M2_track_delft_radar_vdxdy.yaml",
+                "--batch_size",
+                "2",
+                "--epoch",
+                "20",
+                // "--test",
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "test_delft_lidar",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--cfg",
+                "cfgs/M2_track_delft_lidar.yaml",
+                "--checkpoint",
+                "/workspace/mot/Open3DSOT/pretrained_models/mmtrack_kitti_car.ckpt",
+                "--test",
+              
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "test_delft_radar",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--cfg",
+                "cfgs/M2_track_delft_radar_vdxdy.yaml",
+                "--checkpoint",
+                "/workspace/sot/Open3DSOT/output/M2RADAR_car/lightning_logs/version_0/checkpoints/epoch=62-step=22113.ckpt",
+                "--test",
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "test_kitti",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--cfg",
+                "cfgs/M2_track_kitti.yaml",
+                "--checkpoint",
+                "/workspace/sot/Open3DSOT/pretrained_models/mmtrack_kitti_car.ckpt",
+                "--test",
+              
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
